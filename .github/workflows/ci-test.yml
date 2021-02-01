@@ -34,7 +34,7 @@ jobs:
       with:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
-        file: ./publish-api/Dockerfile
+        context: ./publish-api
         registry: docker.pkg.github.com
         repository: myjetwallet/lykke.service.b2c2adapter/lykke.service.b2c2adapter
         tag_with_ref: false
