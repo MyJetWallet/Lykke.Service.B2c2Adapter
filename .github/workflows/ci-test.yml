@@ -24,8 +24,17 @@ jobs:
       run: ls
 
     - name: Publish Service
-      run: dotnet publish --no-build ./src/Lykke.Service.Assets/Lykke.Service.Assets.csproj --configuration Release --output ./publish-api
+      run: dotnet publish --no-build ./src/Lykke.Service.B2c2Adapter/Lykke.Service.B2c2Adapter.csproj --configuration Release --output ./publish-api
 
     - name: Check Service dir
       run: ls ./publish-api
+      
+    - name: Publish image
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        registry: docker.pkg.github.com
+        repository: myjetwallet/lykke.service.b2c2adapter/lykke.service.b2c2adapter
+        tag_with_ref: false
 
