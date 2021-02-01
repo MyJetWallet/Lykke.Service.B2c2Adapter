@@ -36,6 +36,6 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
         path: ./publish-api
         registry: docker.pkg.github.com
-        repository: myjetwallet/service.b2c2adapter
+        repository: myjetwallet/lykke.service.b2c2adapter/lykke.service.b2c2adapter
         tags: latest
 
