@@ -20,6 +20,8 @@ jobs:
       run: dotnet build --configuration Release /p:AssemblyVersion=0.0.0
     - name: Test
       run: dotnet test --no-build --configuration Release
+    - name: ls
+      run: ls
 
     - name: Publish Service
       run: dotnet publish --no-build ./src/Lykke.Service.Assets/Lykke.Service.Assets.csproj --configuration Release --output ./publish-api
